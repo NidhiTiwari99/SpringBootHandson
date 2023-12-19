@@ -22,15 +22,15 @@ public class WebServiceConfiguration extends WsConfigurerAdapter {
 		MessageDispatcherServlet servlet = new MessageDispatcherServlet();
 		servlet.setApplicationContext((org.springframework.context.ApplicationContext) applicationContext);
 		servlet.setTransformWsdlLocations(true);
-		return new ServletRegistrationBean(servlet, "/vkakarlaService/*");
+		return new ServletRegistrationBean(servlet, "/mypackageService/*");
 	}
 
 	@Bean(name = "employees")
 	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema employeeSchema) {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-		wsdl11Definition.setPortTypeName("vkakarlaServiceSoapHttp");
-		wsdl11Definition.setLocationUri("/vkakarlaService");
-		wsdl11Definition.setTargetNamespace("interfaces.soap.springboot.vkakarla.com");
+		wsdl11Definition.setPortTypeName("mypackageServiceSoapHttp");
+		wsdl11Definition.setLocationUri("/mypackageService");
+		wsdl11Definition.setTargetNamespace("mypackage.model");
 		wsdl11Definition.setSchema(employeeSchema);
 		return wsdl11Definition;
 	}

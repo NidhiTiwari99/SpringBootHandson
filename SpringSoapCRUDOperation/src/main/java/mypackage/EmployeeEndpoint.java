@@ -1,4 +1,4 @@
-package mypackage.model;
+package mypackage;
 import mypackage.model.*;
 
 import org.springframework.beans.BeanUtils;
@@ -12,7 +12,7 @@ import mypackage.service.EmployeeService;
 @Endpoint
 public class EmployeeEndpoint {
 
-	private static final String NAMESPACE_URI = "http://interfaces.soap.springboot.vkakarla.com";
+	private static final String NAMESPACE_URI = "http://www.example.org/employees";
 
 	@Autowired
 	private EmployeeService employeeService;

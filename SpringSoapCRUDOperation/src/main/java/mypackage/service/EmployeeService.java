@@ -1,5 +1,4 @@
 package mypackage.service;
-import mypackage.service.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,13 +9,9 @@ import mypackage.repository.EmployeeRepository;
 @Service
 public class EmployeeService implements EmpService {
 	
-	@Autowired
-	EmployeeRepository employeeRepository;
+	 @Autowired
+	 EmployeeRepository employeeRepository;
 
-	@Override
-	public void updateEmployee(Employee employee) {
-		employeeRepository.save(employee);
-	}
 
 	@Override
 	public Employee getEmployeeById(long employeeId) {
@@ -31,15 +26,17 @@ public class EmployeeService implements EmpService {
 		employeeRepository.save(employee);
 	}
 
-	public void deleteEmployee(Object object) {
-		employeeRepository.deleteById((Long) object);
-		
+	@Override
+	public void updateEmployee(Employee employee) {
+		employeeRepository.save(employee);
+
 	}
 
 	@Override
 	public void deleteEmployee(long employeeId) {
-		// TODO Auto-generated method stub
-		
+		employeeRepository.deleteById(employeeId);
+
 	}
 
 }
+ 

@@ -41,13 +41,13 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-
 	<build>
-		<plugin>
-  <groupId>org.codehaus.mojo</groupId>
-  <artifactId>jaxb2-maven-plugin</artifactId>
-  <version>1.6</version>
-  <executions>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
     <execution>
       <id>xjc</id>
       <goals>
@@ -60,7 +60,7 @@
     <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
     <clearOutputDir>false</clearOutputDir>
   </configuration>
-</plugin>
-	
+			</plugin>
+		</plugins>
 	</build>
 </project>
